@@ -1,0 +1,84 @@
+# Anonymization rules configuration
+# Each rule has: name, type, pattern (regex), mask_strategy, priority, enabled
+
+rules:
+  - name: email
+    type: email
+    description: Email addresses
+    pattern: '(?i)\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b'
+    mask_strategy: email_mask
+    priority: 10
+    enabled: true
+    example: "user@example.com → u***@example.com"
+
+  - name: phone_ru
+    type: phone
+    description: Russian / international phone numbers
+    pattern: '(?:\+7|8|7)?[\s\-]?\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}'
+    mask_strategy: phone_mask
+    priority: 20
+    enabled: true
+    example: "+7 (999) 123-45-67 → +7 (999) ***-**-67"
+
+  - name: passport_ru
+    type: passport
+    description: Russian passport series and number
+    pattern: '\b\d{4}\s?\d{6}\b'
+    mask_strategy: full_mask
+    priority: 30
+    enabled: true
+    example: "4510 123456 → **** ******"
+
+  - name: snils
+    type: snils
+    description: SNILS (Russian social security number)
+    pattern: '\b\d{3}-\d{3}-\d{3}-\d{2}\b'
+    mask_strategy: snils_mask
+    priority: 40
+    enabled: true
+    example: "123-456-789-00 → ***-***-***-00"
+
+  - name: credit_card
+    type: credit_card
+    description: Credit / debit card numbers (basic Luhn-aware pattern)
+    pattern: '\b(?:\d[ -]*?){13,19}\b'
+    mask_strategy: card_mask
+    priority: 50
+    enabled: true
+    example: "4111 1111 1111 1111 → **** **** **** 1111"
+
+  - name: inn
+    type: inn
+    description: Russian INN (tax ID) 10 or 12 digits
+    pattern: '\b\d{10}(?:\d{2})?\b'
+    mask_strategy: full_mask
+    priority: 60
+    enabled: true
+    example: "7707083893 → **********"
+
+  - name: ip_address
+    type: ip
+    description: IPv4 addresses
+    pattern: '\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b'
+    mask_strategy: ip_mask
+    priority: 70
+    enabled: true
+    example: "192.168.1.1 → 192.***.***.***"
+
+  - name: full_name_ru
+    type: name
+    description: Simple Russian full name pattern (Surname Name Patronymic)
+    pattern: '\b[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+){1,2}\b'
+    mask_strategy: name_mask
+    priority: 80
+    enabled: true
+    example: "Иван Иванов → И. И."
+
+  - name: date
+    type: date
+    description: Common date formats
+    pattern: '\b(?:\d{1,2}[./-]\d{1,2}[./-]\d{2,4}|\d{4}-\d{2}-\d{2})\b'
+    mask_strategy: date_mask
+    priority: 90
+    enabled: true
+    example: "12.05.1990 → **.**.****"

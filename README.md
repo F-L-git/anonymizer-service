@@ -175,7 +175,3 @@ anonymizer-service/
 - **Расширение правил**: plugin-стиль через YAML + runtime API + опционально DB.
 - **Наблюдаемость**: structured JSON logs (structlog), метрики можно добавить через prometheus-client.
 - **Безопасность** (дальнейшее развитие): JWT/OAuth2, rate limiting, RBAC, аудит логов.
-
-## Лицензия
-
-MIT (или укажите свою).

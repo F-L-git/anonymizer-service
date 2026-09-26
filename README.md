@@ -143,7 +143,11 @@ uvicorn app.main:app --reload --port 8000
 ## Тесты
 
 ```bash
-pytest tests/ -v
+# запуск тестов
+python -m pytest tests/ -v
+
+# проверка покрытия тестами
+python -m pytest tests/ -v --cov=app
 ```
 
 ## Структура проекта

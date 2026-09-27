@@ -6,7 +6,6 @@
 [![Docker Compose](https://img.shields.io/badge/Compose-v3.9-2496ED?logo=docker&logoColor=white)](./docker-compose.yml)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Redis](https://img.shields.io/badge/Redis-cache-DC382D?logo=redis&logoColor=white)](https://redis.io/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 [![Tests](https://img.shields.io/badge/tests-pytest-yellow?logo=pytest)](./tests/)
 
 Сервис для автоматического обнаружения и маскирования чувствительных (персональных) данных в текстах.

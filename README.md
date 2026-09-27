@@ -1,5 +1,14 @@
 # Anonymizer Service
 
+[![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
+[![Docker Compose](https://img.shields.io/badge/Compose-v3.9-2496ED?logo=docker&logoColor=white)](./docker-compose.yml)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Redis](https://img.shields.io/badge/Redis-cache-DC382D?logo=redis&logoColor=white)](https://redis.io/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+[![Tests](https://img.shields.io/badge/tests-pytest-yellow?logo=pytest)](./tests/)
+
 Сервис для автоматического обнаружения и маскирования чувствительных (персональных) данных в текстах.
 
 ## Возможности
